@@ -1,49 +1,33 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const bgs = [
+	{src: 'forest.webp', alt: "aerial shot of forest", attr: 'Photo by <a href="https://unsplash.com/@pinewatt?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">pine  watt</a> on <a href="https://unsplash.com/photos/aerial-shot-of-forest-2Hzmz15wGik?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'},
+	{src: 'world2.jpg', alt: "hot air baloons", attr: 'Photo by <a href="https://unsplash.com/@boopathirajaa?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Boopathi Rajaa Nedunchezhiyan</a> on <a href="https://unsplash.com/photos/hot-air-balloons-on-the-sky-during-daytime-QM-qphujuKY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'},
+	{ src: 'castle.webp', alt: "a castle on a snowy mountain", attr: 'Photo by <a href="https://unsplash.com/@lanju_fotografie?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Lanju Fotografie</a> on <a href="https://unsplash.com/photos/white-and-brown-castle-surrounded-by-trees-covered-with-snow-cvS-IDyGKTE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'},
+]
+
+const bg = bgs[Math.floor(Math.random() * bgs.length)]
 ---
+
+
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
-		<Header />
+	<body class="hero-container">
+		<div class="hero-img-container cirle">
+	<img rel="preload" class="hero-img" src={bg.src} alt={bg.alt}>
+	<span class="img-attribution" aria-label="image attribution"></span>
+</div>
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<h1>Make Worlds with inkt</h1>
+			<h2>A writing companion for novelists and screenwriters</h2>
+			<button class="download-button"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M216,73.52C204.53,62.66,185,56,168,56a63.72,63.72,0,0,0-40,14h0A63.71,63.71,0,0,0,88.88,56C52,55.5,23.06,86.3,24,123.19a119.62,119.62,0,0,0,37.65,84.12A31.92,31.92,0,0,0,83.6,216h87.7a31.75,31.75,0,0,0,23.26-10c15.85-17,21.44-33.2,21.44-33.2h0c-16.79-11.53-24-30.87-24-52.78,0-18.3,11.68-34.81,24-46.48Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M168,8h-1a32,32,0,0,0-31,24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>  Download for mac</button>
 		</main>
 		<Footer />
 	</body>
